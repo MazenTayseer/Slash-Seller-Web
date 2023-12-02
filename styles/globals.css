@@ -18,7 +18,7 @@ body {
 }
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col mx-auto sm:px-36 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col mx-auto lg:px-36 md:px-16 px-6;
 }
 
 .main_bg {

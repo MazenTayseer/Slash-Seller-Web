@@ -25,11 +25,11 @@ const Nav = () => {
   };
 
   return (
-    <nav className='py-6 w-full flex flex-wrap items-center justify-between'>
+    <nav className='py-6 w-full flex flex-wrap items-center justify-between text-center'>
       <Link href='/' onClick={closeNavbar}>
-        <h1 className='md:text-3xl text-2xl text-customWhite font-bold'>
+        <h1 className='md:text-3xl text-2xl max-[340px]:text-xl text-customWhite font-bold'>
           Slash{" "}
-          <span className='text-customLime md:text-2xl text-xl'>Seller</span>
+          <span className='text-customLime md:text-2xl text-xl max-[340px]:text-lg'>Seller</span>
         </h1>
       </Link>
 
@@ -53,9 +53,9 @@ const Nav = () => {
       {/* Mobile */}
       <button
         onClick={toggleNavbar}
-        className='block text-3xl text-customWhite mr-4 focus:outline-none md:hidden'
+        className='block text-xl sm:text-2xl text-customWhite mr-4 focus:outline-none md:hidden'
       >
-        {showNavbar ? <FaXmark /> : <FaBars />}
+        {showNavbar ? <FaXmark/> : <FaBars />}
       </button>
 
       {showNavbar && (

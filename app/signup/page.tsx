@@ -34,7 +34,7 @@ const signUpPage = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      className='flex flex-col justify-center items-center mt-32'
+      className='flex flex-col justify-center items-center my-32'
     >
       <h1 className='text_white text-center text-4xl font-bold font-satoshi'>
         <span>

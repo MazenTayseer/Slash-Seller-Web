@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Chatbot from "@components/Chatbot/Chatbot";
 
 const HomePage = () => {
   return (
@@ -24,6 +25,8 @@ const HomePage = () => {
       >
         Your Style with Local Flair <br /> for Global Sales
       </motion.p>
+
+      <Chatbot />
     </section>
   );
 };

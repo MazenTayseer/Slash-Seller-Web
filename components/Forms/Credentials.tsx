@@ -1,10 +1,10 @@
-interface formProps {
-  handleContinue: ()=>void
-}
+type CredentialsProps = {
+  handleContinue: () => void;
+};
 
-const Credentials: React.FC<formProps> = ({ handleContinue }) => {
+const Credentials = ({ handleContinue }: CredentialsProps) => {
   return (
-    <form className='mt-10 w-full max-w-2xl flex flex-col gap-6'>
+    <form className='mt-10 w-full max-w-md flex flex-col gap-6'>
       <label className='font-semibold text-customWhite text-md'>
         <span>Full Name</span>
         <input

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { FaBars, FaXmark } from "react-icons/fa6";
 
@@ -29,7 +29,9 @@ const Nav = () => {
       <Link href='/' onClick={closeNavbar}>
         <h1 className='md:text-3xl text-2xl max-[340px]:text-xl text-customWhite font-bold'>
           Slash{" "}
-          <span className='text-customLime md:text-2xl text-xl max-[340px]:text-lg'>Seller</span>
+          <span className='text-customLime md:text-2xl text-xl max-[340px]:text-lg'>
+            Seller
+          </span>
         </h1>
       </Link>
 
@@ -55,33 +57,35 @@ const Nav = () => {
         onClick={toggleNavbar}
         className='block text-xl sm:text-2xl text-customWhite mr-4 focus:outline-none md:hidden'
       >
-        {showNavbar ? <FaXmark/> : <FaBars />}
+        {showNavbar ? <FaXmark /> : <FaBars />}
       </button>
 
-      {showNavbar && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className='h-screen z-10 w-full flex flex-col gap-4 pt-8 md:hidden'
-        >
-          <Link
-            href='/signin'
-            onClick={closeNavbar}
-            className='py-3 px-9 font-bold bg-customLime text-customMain rounded-lg transition duration-300 ease-in-out hover:brightness-75'
+      <AnimatePresence>
+        {showNavbar && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: -20 }}
+            className='h-screen z-10 w-full flex flex-col gap-4 pt-8 md:hidden'
           >
-            Sign In
-          </Link>
+            <Link
+              href='/signin'
+              onClick={closeNavbar}
+              className='py-3 px-9 font-bold bg-customLime text-customMain rounded-lg lime_btn_hover'
+            >
+              Sign In
+            </Link>
 
-          <Link
-            href='/signup'
-            onClick={closeNavbar}
-            className='py-3 px-9 font-bold bg-customWhite text-customMain rounded-lg transition duration-300 ease-in-out hover:bg-gray-300'
-          >
-            Sign Up
-          </Link>
-        </motion.div>
-      )}
+            <Link
+              href='/signup'
+              onClick={closeNavbar}
+              className='py-3 px-9 font-bold bg-customWhite text-customMain rounded-lg transition duration-300 ease-in-out hover:bg-gray-300'
+            >
+              Sign Up
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

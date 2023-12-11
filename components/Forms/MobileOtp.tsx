@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-interface formProps {
+type MobileOtpProps = {
   handleContinue: () => void;
-}
+};
 
-const MobileOtp: React.FC<formProps> = ({ handleContinue }) => {
+const MobileOtp = ({ handleContinue }: MobileOtpProps) => {
   const otpSize: number = 6;
 
   const [otpValues, setOtpValues] = useState<string[]>(
@@ -57,7 +57,7 @@ const MobileOtp: React.FC<formProps> = ({ handleContinue }) => {
   };
 
   return (
-    <form className='mt-10 w-full max-w-2xl flex flex-col gap-6'>
+    <form className='mt-10 w-full max-w-md flex flex-col gap-6'>
       <label className='font-semibold text-customWhite text-md'>
         <span>Enter the OTP sent to your Mobile Number</span>
 

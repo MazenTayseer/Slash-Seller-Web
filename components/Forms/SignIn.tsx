@@ -1,10 +1,10 @@
-interface formProps {
+type SignInFormProps = {
   handleSignIn: () => void;
-}
+};
 
-const SignInForm: React.FC<formProps> = ({ handleSignIn }) => {
+const SignInForm = ({ handleSignIn }: SignInFormProps) => {
   return (
-    <form className='mt-10 w-full max-w-2xl flex flex-col gap-6'>
+    <form className='mt-10 w-full max-w-md flex flex-col gap-6'>
       <label className='font-semibold text-customWhite text-md'>
         <span>Email Address</span>
 

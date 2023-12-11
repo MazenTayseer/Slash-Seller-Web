@@ -1,8 +1,5 @@
 import { FaRegCircle } from "react-icons/fa6";
 
-interface formProps {
-  handleContinue: () => void;
-}
 
 const Password = () => {
   const passwordChecks: string[] = [
@@ -27,7 +24,7 @@ const Password = () => {
   };
 
   return (
-    <form className='mt-10 w-full max-w-2xl flex flex-col gap-6'>
+    <form className='mt-10 w-full max-w-md flex flex-col gap-6'>
       <div className='flex justify-center items-center flex-wrap gap-2 text-sm'>
         {renderPasswordChecks()}
       </div>

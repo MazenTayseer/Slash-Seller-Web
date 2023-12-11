@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-interface formProps {
+type EmailOtpProps = {
   handleContinue: () => void;
-}
+};
 
-const EmailOtp: React.FC<formProps> = ({ handleContinue }) => {
+const EmailOtp = ({ handleContinue }: EmailOtpProps) => {
   const otpSize: number = 6;
 
   const [otpValues, setOtpValues] = useState<string[]>(
@@ -57,7 +57,7 @@ const EmailOtp: React.FC<formProps> = ({ handleContinue }) => {
   };
 
   return (
-    <form className='mt-10 w-full max-w-2xl flex flex-col gap-6'>
+    <form className='mt-10 w-full max-w-md flex flex-col gap-6'>
       <label className='font-semibold text-customWhite text-md'>
         <span>Enter the OTP sent to your email</span>
 
